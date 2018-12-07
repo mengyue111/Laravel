@@ -13,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //调用share方法 在试图间共享数据
+        View::share('key','value');
     }
 
     /**

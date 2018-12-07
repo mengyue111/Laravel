@@ -13,6 +13,7 @@ return [
     |
     */
 
+    //默认使用local配置存放上传文件
     'default' => env('FILESYSTEM_DRIVER', 'local'),
 
     /*

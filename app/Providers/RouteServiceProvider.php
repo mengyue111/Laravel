@@ -24,8 +24,21 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        //定义全局约束，模式过滤器
+        //当出现id时  只有id为数字才能被调用路由
+        // Route::pattern('id','[0-9]+');
+
+
 
         parent::boot();
+
+        /*注册显示绑定*/
+        // Route::model('user_model',\App\MyGuests::class);
+
+        /*自定义解析逻辑*/
+       /* Route::bind('aaa',function($value){
+            return \App\MyGuests::where('firstname',$value)->first()??abort(404);
+        });*/
     }
 
     /**

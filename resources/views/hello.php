@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <meta name="csrf-token" content="{{ csrf_token() }}"> 
         <title>Laravel</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
@@ -38,7 +39,11 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">hello,{{$name}}</div>
+                <form action="file/upload" method="post"    enctype="multipart/form-data">
+                    <label for="file">文件名：</label>
+                    <input type="file" name="photo" id="file"><br>
+                    <input type="submit" name="submit" value="提交">
+                </form>
             </div>
         </div>
     </body>
